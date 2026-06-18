@@ -226,7 +226,7 @@ logisense-ai/
 # Tim Pengembang
 
 | Nama | Peran |
-|--------|--------|--------|
+|--------|--------|
 | Farhan Mujiburrahman | Project Manager & AI Engineer |
 | Nur Shadiqah |  Frontend Developer & UI/UX |
 | Razian Sabri |  Backend & Database Engineer |
