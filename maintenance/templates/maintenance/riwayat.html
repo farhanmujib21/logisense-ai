@@ -1,0 +1,78 @@
+{% extends 'maintenance/base.html' %}
+{% block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h4 class="fw-bold"><i class="bi bi-clock-history"></i> Riwayat Perawatan</h4>
+    <a href="{% url 'input_perawatan' %}" class="btn btn-primary">
+        <i class="bi bi-plus"></i> Input Baru
+    </a>
+</div>
+
+<!-- Filter -->
+<div class="card mb-3 p-3">
+    <form method="GET" class="d-flex gap-2 align-items-center">
+        <label class="fw-semibold me-2">Filter Aset:</label>
+        <select name="aset" class="form-select w-auto">
+            <option value="">Semua Aset</option>
+            {% for aset in aset_list %}
+                <option value="{{ aset.kode_aset }}" 
+                    {% if aset_filter == aset.kode_aset %}selected{% endif %}>
+                    {{ aset.kode_aset }} - {{ aset.nama_kendaraan }}
+                </option>
+            {% endfor %}
+        </select>
+        <button type="submit" class="btn btn-outline-primary">Filter</button>
+        <a href="{% url 'riwayat' %}" class="btn btn-outline-secondary">Reset</a>
+    </form>
+</div>
+
+<!-- Tabel -->
+<div class="card">
+    <div class="card-body p-0">
+        <table class="table table-hover mb-0">
+            <thead class="table-dark">
+                <tr>
+                    <th>Tanggal</th>
+                    <th>Aset</th>
+                    <th>Jenis Perawatan</th>
+                    <th>KM Servis</th>
+                    <th>Next Service</th>
+                    <th>Anomali</th>
+                    <th>Dicatat Oleh</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in perawatan_list %}
+                <tr>
+                    <td>{{ p.tanggal }}</td>
+                    <td><code>{{ p.aset.kode_aset }}</code></td>
+                    <td>{{ p.get_jenis_perawatan_display }}</td>
+                    <td>{{ p.km_saat_servis }} KM</td>
+                    <td>
+                        KM {{ p.next_service_km }}<br>
+                        <small class="text-muted">{{ p.next_service_tanggal }}</small>
+                    </td>
+                    <td>
+                        {% if p.is_anomali %}
+                            <span class="badge bg-danger" title="{{ p.pesan_anomali }}">
+                                ⚠️ Anomali
+                            </span>
+                        {% else %}
+                            <span class="badge bg-success">✅ Normal</span>
+                        {% endif %}
+                    </td>
+                    <td>{{ p.dicatat_oleh }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="7" class="text-center text-muted py-4">
+                        Belum ada data perawatan.
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}
