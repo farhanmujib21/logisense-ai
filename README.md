@@ -194,22 +194,32 @@ logisense-ai/
 ## 1. Halaman Login
 
 ![Login]
+<img width="1010" height="637" alt="image" src="https://github.com/user-attachments/assets/4c78aed7-dfb0-411c-aca5-a5dd749c49d6" />
+
 
 ## 2. Halaman Form Perawatan
 
-![Form Perawatan](screenshots/form-perawatan.png)
+![Form Perawatan]
+<img width="977" height="587" alt="image" src="https://github.com/user-attachments/assets/f8e84f77-67d3-425b-b2d6-a34cb2b159e4" />
+
 
 ## 3. Halaman Dashboard
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard]
+<img width="913" height="562" alt="image" src="https://github.com/user-attachments/assets/854244dd-225a-49c8-98de-f9e2d403f86a" />
+
 
 ## 4. Halaman Riwayat Perawatan
 
-![Riwayat](screenshots/riwayat.png)
+![Riwayat]
+<img width="897" height="642" alt="image" src="https://github.com/user-attachments/assets/a68498de-5479-4ad7-a967-ee0780e49564" />
+
 
 ## 5. Halaman Admin
 
-![Admin](screenshots/admin.png)
+![Admin]
+<img width="1082" height="477" alt="image" src="https://github.com/user-attachments/assets/aee55a73-869f-4bbc-9b33-5926e074a212" />
+
 
 ---
 
